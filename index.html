@@ -31,7 +31,7 @@
 	<body onload="getCookies()">
 		<div class="typewriter">
 			<div id="text">
-				LATAJĄCY HOLENDER THE VIDEO GAME<br>
+				LATAJĄCY HOLENDER THE VIDEO GAME 0.001<br>
 				POZIOM FASZYZMU: <div id="fasz">21</div><br>
 				POZIOM KOMUNIZMU: <div id="kom">37</div><br>
 				<div id="state">-</div>
@@ -77,7 +77,12 @@
 				}
 
 				function getCookies(){
+					if(api.get('komunizm')===undefined){
+						api.set('komunizm','21');
+						api.set('faszyzm','37');
+					}
 					document.getElementById('kom').innerHTML = api.get('komunizm');
+					
 					document.getElementById('fasz').innerHTML = api.get('faszyzm');
 					setState();
 				}
